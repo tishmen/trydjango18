@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -166,3 +167,27 @@ LOGGING = {
         },
     },
 }
+
+
+# anymail
+
+ANYMAIL = {
+    'MAILGUN_API_KEY': 'key-d63bc19e1aacbb269529f752a9c4acf1',
+}
+
+EMAIL_BACKEND = 'anymail.backends.mailgun.MailgunBackend'
+
+DEFAULT_FROM_EMAIL = 'postmaster@sandbox6ea09e46f17f43b5a05e3610dbad9958.mail'\
+    'gun.org'
+
+
+# test for mailgun and anymail
+
+# from django.core.mail import send_mail
+
+# send_mail(
+#     "It works!",
+#     "This will get sent through Mailgun",
+#     settings.DEFAULT_FROM_EMAIL,
+#     ['topuzov.work@gmail.com']
+# )
