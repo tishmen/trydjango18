@@ -18,8 +18,11 @@ from django.conf.urls import url
 from django.conf.urls.static import static
 from django.contrib import admin
 
+from newsletter.views import home
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', home, name='home'),
 ]
 
 urlpatterns += static(
