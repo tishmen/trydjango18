@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+from .forms import SignUpForm
 from .models import SignUp
 
 # Register your models here.
@@ -8,4 +9,5 @@ from .models import SignUp
 @admin.register(SignUp)
 class SignUpAdmin(admin.ModelAdmin):
 
+    form = SignUpForm
     list_display = ['email', 'added', 'changed']
