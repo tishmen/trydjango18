@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
-    'anymail',
+    # 'anymail',
     'newsletter',
 ]
 
@@ -172,14 +172,14 @@ LOGGING = {
 
 # anymail
 
-ANYMAIL = {
-    'MAILGUN_API_KEY': 'key-d63bc19e1aacbb269529f752a9c4acf1',
-}
+# ANYMAIL = {
+#     'MAILGUN_API_KEY': 'key-d63bc19e1aacbb269529f752a9c4acf1',
+# }
 
-EMAIL_BACKEND = 'anymail.backends.mailgun.MailgunBackend'
+# EMAIL_BACKEND = 'anymail.backends.mailgun.MailgunBackend'
 
-DEFAULT_FROM_EMAIL = 'postmaster@sandbox6ea09e46f17f43b5a05e3610dbad9958.mail'\
-    'gun.org'
+# DEFAULT_FROM_EMAIL = 'postmaster@sandbox6ea09e46f17f43b5a05e3610dbad9958.mail'\
+#     'gun.org'
 
 
 # test for mailgun and anymail
