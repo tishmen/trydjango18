@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-    <form action="" method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-    <input type="submit" value="Contact Us">
-    </form>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block head_title %}Contact Us{{ block.super }}{% endblock %}
+
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+<input type="submit" value="Contact Us">
+</form>
+
+{% endblock %}
