@@ -1,6 +1,6 @@
 /static
 media
-log
+logs
 
 __pycache__
 *.pyc

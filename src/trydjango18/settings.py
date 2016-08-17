@@ -155,9 +155,7 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'class': 'logging.FileHandler',
-            'filename': os.path.join(
-                os.path.dirname(BASE_DIR), 'log', 'app.log'
-            ),
+            'filename': os.path.join(BASE_DIR, 'logs', 'app.log'),
         },
     },
     'loggers': {
