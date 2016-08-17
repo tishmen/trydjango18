@@ -18,7 +18,7 @@ def home(request):
         if not obj.full_name:
             obj.full_name = 'default'
         obj.save()
-    return render(request, 'home.html', context)
+    return render(request, 'base.html', context)
 
 
 def contact(request):
