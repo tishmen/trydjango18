@@ -169,6 +169,11 @@ LOGGING = {
 }
 
 
+# forms
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
+
+
 # gmail
 # https://accounts.google.com/DisplayUnlockCaptcha
 
