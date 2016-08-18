@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
   {% include 'head.html' %}
+  {% block extracss %}  {% endblock %}
+  {% block extrajs %}  {% endblock %}
+</head>
 
-  <body>
-
+<body>
     {% include 'navbar.html' %}
-
     <div class="container">
+        {% block jumbotron %} {% endblock %}
+        {% block content %} {% endblock %}
+    </div>
+</body>
 
-      {% block jumbotron %} {% endblock %}
-
-      {% block content %} {% endblock %}
-
-    </div> <!-- /container -->
-
-  </body>
 </html>
