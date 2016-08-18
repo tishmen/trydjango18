@@ -18,12 +18,15 @@ from django.conf.urls import url
 from django.conf.urls.static import static
 from django.contrib import admin
 
+from trydjango18.views import about
 from newsletter.views import home, contact
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^about/$', about, name='about'),
     url(r'^$', home, name='home'),
     url(r'^contact/$', contact, name='contact'),
+
+    url(r'^admin/', admin.site.urls),
 ]
 
 if settings.DEBUG:

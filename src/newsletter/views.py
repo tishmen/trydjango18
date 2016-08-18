@@ -4,8 +4,6 @@ from django.shortcuts import render
 
 from .forms import SignUpForm, ContactForm
 
-# Create your views here.
-
 
 def home(request):
     form = SignUpForm(request.POST or None)
