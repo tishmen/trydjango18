@@ -4,6 +4,7 @@ Django==1.10
 django-anymail==0.4.2
 django-crispy-forms==1.6.0
 django-extensions==1.7.1
+django-registration-redux==1.4
 ipython==5.1.0
 ipython-genutils==0.1.0
 pathlib2==2.1.0
