@@ -17,18 +17,17 @@ def home(request):
 def contact(request):
     form = ContactForm(request.POST or None)
     if form.is_valid():
-        # for k, v in form.cleaned_data.iteritems():
-        #     print(k, v)
-        full_name = form.cleaned_data.get('full_name')
-        email = form.cleaned_data.get('email')
-        message = form.cleaned_data.get('message')
-        subject = 'this is subject'
-        msg = '{}, {} via {}'.format(full_name, message, email)
+        message = 'Hi {},\n\nThis is a test response to your question:'\
+            '\n\n{}\n\nSent via {}.'.format(
+                form.cleaned_data.get('full_name'),
+                form.cleaned_data.get('message'),
+                form.cleaned_data.get('email')
+            )
         send_mail(
-            subject,
-            msg,
+            'Contact form test response',
+            message,
             settings.EMAIL_HOST_USER,
-            [settings.EMAIL_HOST_USER],
+            [form.cleaned_data.get('email')],
             fail_silently=False
         )
     context = {'form': form}
