@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -182,6 +183,11 @@ EMAIL_HOST_USER = 'test@gmail.com'
 EMAIL_HOST_PASSWORD = 'test'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+
+# registration
+
+ACCOUNT_ACTIVATION_DAYS = 7
 
 
 # anymail

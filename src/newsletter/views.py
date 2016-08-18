@@ -9,7 +9,7 @@ def home(request):
     form = SignUpForm(request.POST or None)
     if form.is_valid():
         obj = form.save(commit=False)
-        obj.full_name = obj.full_name or request.user or 'AnonymousUser'
+        # obj.full_name = obj.full_name or request.user or 'AnonymousUser'
         obj.save()
     return render(request, 'home.html', {'title': 'Welcome', 'form': form})
 
