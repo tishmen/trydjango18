@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
@@ -43,6 +44,9 @@ INSTALLED_APPS = [
     'crispy_forms',
     'newsletter',
 ]
+
+SITE_ID = 1
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -186,9 +190,11 @@ EMAIL_USE_TLS = True
 
 
 # registration
+# add profile page
 
 ACCOUNT_ACTIVATION_DAYS = 7
-
+REGISTRATION_AUTO_LOGIN = True
+LOGIN_REDIRECT_URL = '/'
 
 # anymail
 
