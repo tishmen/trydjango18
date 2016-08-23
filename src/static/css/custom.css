@@ -2,16 +2,35 @@ body {
     min-height: 2000px;
 }
 
-.navbar-static-top {
-    background-color: #0C3C26;
-    margin-bottom: 0px;
-}
-
 .text-center {
     text-allign: center;
 }
 
-.jumbotron {
+.navbar-static-top {
     background-color: #0C3C26;
-    color: #fff;
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: #777;
+}
+
+.navbar-default .navbar-nav>li>a:hover {
+    color: #444;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    margin-bottom: 0px;
+    border-color: #244f3b;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #0C3C26;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: #244f3b;
 }

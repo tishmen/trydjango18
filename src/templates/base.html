@@ -3,8 +3,12 @@
 
 <head>
   {% include 'head.html' %}
-  {% block extracss %}  {% endblock %}
+  <style type="text/css">
+      {% block extracss %}  {% endblock %}
+  </style>
+  <script type="text/javascript">
   {% block extrajs %}  {% endblock %}
+  </script>
 </head>
 
 <body>
