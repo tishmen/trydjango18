@@ -9,10 +9,8 @@
 
 <body>
     {% include 'navbar.html' %}
-    <div class="container">
-        {% block jumbotron %} {% endblock %}
-        {% block content %} {% endblock %}
-    </div>
+    {% block jumbotron %} {% endblock %}
+    {% block content %} {% endblock %}
 </body>
 
 </html>

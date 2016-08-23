@@ -1,11 +1,17 @@
 body {
-  min-height: 2000px;
+    min-height: 2000px;
 }
 
 .navbar-static-top {
-  margin-bottom: 19px;
+    background-color: #0C3C26;
+    margin-bottom: 0px;
 }
 
 .text-center {
-  text-allign: center;
+    text-allign: center;
+}
+
+.jumbotron {
+    background-color: #0C3C26;
+    color: #fff;
 }
