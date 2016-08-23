@@ -5,82 +5,120 @@
 
 {% block extracss %}
 
-    .jumbotron {
-        background-color: #0C3C26;
-        color: white;
-    }
+    {% if not user.is_authenticated %}
 
-    .navbar-static-top {
-        margin-bottom: 0px;
-        border-color: #244f3b;
-    }
+        .jumbotron {
+            background-color: #0C3C26;
+            color: white;
+        }
 
-    .fa-bolt {
-        color: yellow;
-    }
+        .navbar-static-top {
+            margin-bottom: 0px;
+            border-color: #244f3b;
+        }
+
+        .fa-bolt {
+            color: yellow;
+        }
+
+    {% endif %}
 
 {% endblock %}
 
 {% block jumbotron %}
 
-    <div class="jumbotron">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <h1>Try Django 1.8</h1>
-                    <p>The MVP Landing project is designed to get your project started. The goal is to help you lunch as soon as possible with the least ammount of investement using time or money. Join us today.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Join Us &raquo;</a></p>
-                </div>
-                <div class="col-sm-6">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/2uLYO1LUf6Q" frameborder="0" allowfullscreen></iframe>
+    {% if not user.is_authenticated %}
+
+        <div class="jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h1>Try Django 1.8</h1>
+                        <p>The MVP Landing project is designed to get your project started. The goal is to help you lunch as soon as possible with the least ammount of investement using time or money. Join us today.</p>
+                        <p><a class="btn btn-lg btn-primary" href="#" role="button">Join Us &raquo;</a></p>
+                    </div>
+                    <div class="col-sm-6">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/2uLYO1LUf6Q" frameborder="0" allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+
+    {% endif %}
 
 {% endblock %}
-
 
 {% block content %}
 
     <div class="row">
         <div class="container">
-            <div class="col-sm-3 pull-right">
-                <p class="lead text-center">{{ title }}</p>
-                <form method="post">
-                    {% csrf_token %}
-                    {{ form|crispy }}
-                    <input class="btn btn-primary" type="submit" value="Sign Up">
-                </form>
-            </div>
 
-            <div class="col-sm-3">
-                <p class="lead text-center">Django &amp; Bootstrap</p>
-                <img class="img-responsive" src="{% static 'img/marketing1.jpg' %}">
-            </div>
+            {% if user.is_authenticated %}
+
+                <h1>Welcome, {{ user }}</h1>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Email</th>
+                            <th>Name</th>
+                            <th>Added</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for obj in queryset %}
+                            <tr>
+                                <td>{{ forloop.counter }}</td>
+                                <td>{{ obj.email }}</td>
+                                <td>{{ obj.full_name }}</td>
+                                <td>{{ obj.added|timesince }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            {% else %}
+
+                <div class="col-sm-3 pull-right">
+                    <p class="lead text-center">{{ title }}</p>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <input class="btn btn-primary" type="submit" value="Sign Up">
+                    </form>
+                </div>
+
+                <div class="col-sm-3">
+                    <p class="lead text-center">Django &amp; Bootstrap</p>
+                    <img class="img-responsive" src="{% static 'img/marketing1.jpg' %}">
+                </div>
 
 
-            <div class="col-sm-3">
-                <p class="lead text-center">
-                    Created for Starters
-                    <br>
-                    <span class="fa-stack fa-5x">
-                        <i class="fa fa-comment-o fa-stack-2x"></i>
-                        <i class="fa fa-bolt fa-stack-1x"></i>
-                    </span>
-                </p>
-            </div>
+                <div class="col-sm-3">
+                    <p class="lead text-center">
+                        Created for Starters
+                        <br>
+                        <span class="fa-stack fa-5x">
+                            <i class="fa fa-comment-o fa-stack-2x"></i>
+                            <i class="fa fa-bolt fa-stack-1x"></i>
+                        </span>
+                    </p>
+                </div>
 
-            <div class="col-sm-3">
-                <p class="lead text-center">
-                    Always open source
-                    <br><br>
-                    <span class="fa-stack fa-5x">
-                        <i class="fa fa-circle-o-notch fa-stack-2x"></i>
-                        <i class="fa fa-github fa-stack-1x"></i>
-                    </span>
-                </p>
-            </div>
+                <div class="col-sm-3">
+                    <p class="lead text-center">
+                        Always open source
+                        <br><br>
+                        <span class="fa-stack fa-5x">
+                            <i class="fa fa-circle-o-notch fa-stack-2x"></i>
+                            <i class="fa fa-github fa-stack-1x"></i>
+                        </span>
+                    </p>
+                </div>
+
+            {% endif %}
+
         </div>
     </div>
 

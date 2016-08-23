@@ -3,6 +3,7 @@ from django.core.mail import send_mail
 from django.shortcuts import render
 
 from .forms import SignUpForm, ContactForm
+from .models import SignUp
 
 
 def home(request):
@@ -11,7 +12,10 @@ def home(request):
         obj = form.save(commit=False)
         # obj.full_name = obj.full_name or request.user or 'AnonymousUser'
         obj.save()
-    return render(request, 'home.html', {'title': 'Sign Up Now', 'form': form})
+    context = {'title': 'Sign Up Now', 'form': form}
+    if request.user.is_staff:
+        context.update({'queryset': SignUp.objects.all().order_by('-added')})
+    return render(request, 'home.html', context)
 
 
 def contact(request):
