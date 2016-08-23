@@ -11,7 +11,7 @@ def home(request):
         obj = form.save(commit=False)
         # obj.full_name = obj.full_name or request.user or 'AnonymousUser'
         obj.save()
-    return render(request, 'home.html', {'title': 'Welcome', 'form': form})
+    return render(request, 'home.html', {'title': 'Sign Up Now', 'form': form})
 
 
 def contact(request):
