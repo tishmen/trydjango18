@@ -4,6 +4,7 @@ logs
 
 development.py
 production.py
+deployment.sh
 
 __pycache__
 *.pyc
