@@ -1,7 +1,7 @@
 from .base import *
 
 try:
-    from .local import *
+    from .development import *
 except ImportError:
     pass
 
