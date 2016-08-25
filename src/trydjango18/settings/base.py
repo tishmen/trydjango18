@@ -22,12 +22,12 @@ BASE_DIR = os.path.dirname(
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'xib30m9kob2_*&jk_c#-==igkpvbz5iq%14kfkyo=s!wt2sbqm'
+# SECRET_KEY = 'R*+>-HZLpG@%wGE/6v/\9(Mp+LM5*v#Htqp5.b$}TN#$#M28\R'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -41,9 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'django_extensions',
-    # 'anymail',
     'crispy_forms',
+
     'newsletter',
 ]
 
@@ -84,16 +85,16 @@ WSGI_APPLICATION = 'trydjango18.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'trydjango18',
-        'USER': 'trydjango18',
-        'PASSWORD': 'qweqweqwe',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'trydjango18',
+#         'USER': 'trydjango18',
+#         'PASSWORD': 'N8,Q^A5%"dp%2.gK',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 
 # Password validation
@@ -124,7 +125,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Europe/Skopje'
+# TIME_ZONE = 'Europe/Skopje'
 
 USE_I18N = True
 
@@ -189,38 +190,14 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 # https://accounts.google.com/DisplayUnlockCaptcha
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'test@gmail.com'
-EMAIL_HOST_PASSWORD = 'test'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'user@gmail.com'
+# EMAIL_HOST_PASSWORD = 'password'
 
 
 # registration
-# add profile page
 
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
 LOGIN_REDIRECT_URL = '/'
-
-# anymail
-
-# ANYMAIL = {
-#     'MAILGUN_API_KEY': 'key-d63bc19e1aacbb269529f752a9c4acf1',
-# }
-
-# EMAIL_BACKEND = 'anymail.backends.mailgun.MailgunBackend'
-
-# DEFAULT_FROM_EMAIL = 'postmaster@sandbox6ea09e46f17f43b5a05e3610dbad9958.ma'\
-# 'ilgun.org'
-
-
-# test for mailgun and anymail
-
-# from django.core.mail import send_mail
-
-# send_mail(
-#     "It works!",
-#     "This will get sent through Mailgun",
-#     settings.DEFAULT_FROM_EMAIL,
-#     ['topuzov.work@gmail.com']
-# )

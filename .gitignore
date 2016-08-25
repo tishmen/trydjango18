@@ -2,6 +2,9 @@
 media
 logs
 
+development.py
+production.py
+
 __pycache__
 *.pyc
 *.sublime-project
