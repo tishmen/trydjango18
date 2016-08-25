@@ -1,0 +1,22 @@
+server {
+    listen 80;
+    server_name trydjango18.vitamindev.io;
+
+    access_log /home/milan/trydjango18/src/logs/nginx-access.log;
+    error_log /home/milan/trydjango18/src/logs/nginx-error.log;
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+
+    location /static/ {
+        alias /home/milan/trydjango18/static/;
+    }
+
+    location /media {
+        alias /home/milan/trydjango18/media/;
+    }
+
+    location / {
+            include proxy_params;
+            proxy_pass http://unix:/tmp/trydjango18.sock;
+    }
+}
