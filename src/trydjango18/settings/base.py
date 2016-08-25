@@ -17,17 +17,8 @@ BASE_DIR = os.path.dirname(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 )
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'R*+>-HZLpG@%wGE/6v/\9(Mp+LM5*v#Htqp5.b$}TN#$#M28\R'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-
-# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -49,7 +40,6 @@ INSTALLED_APPS = [
 ]
 
 SITE_ID = 1
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -82,21 +72,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'trydjango18.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'trydjango18',
-#         'USER': 'trydjango18',
-#         'PASSWORD': 'N8,Q^A5%"dp%2.gK',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
@@ -124,8 +99,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
-# TIME_ZONE = 'Europe/Skopje'
 
 USE_I18N = True
 
@@ -192,8 +165,6 @@ CRISPY_TEMPLATE_PACK = 'bootstrap3'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-# EMAIL_HOST_USER = 'user@gmail.com'
-# EMAIL_HOST_PASSWORD = 'password'
 
 
 # registration
@@ -201,3 +172,29 @@ EMAIL_USE_TLS = True
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
 LOGIN_REDIRECT_URL = '/'
+
+
+# imported from development or production environment
+
+# SECRET_KEY = 'secretkey'
+
+# DEBUG = True
+
+# ALLOWED_HOSTS = []
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'trydjango18',
+#         'USER': 'trydjango18',
+#         'PASSWORD': 'password',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
+
+# TIME_ZONE = 'Europe/Skopje'
+
+# EMAIL_HOST_USER = 'user@gmail.com'
+
+# EMAIL_HOST_PASSWORD = 'password'
